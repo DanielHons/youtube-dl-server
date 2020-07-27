@@ -52,7 +52,8 @@ def q_put():
 
     dl_q.put((url, options))
     print("Added url " + url + " to the download queue")
-    return {"success": True, "url": url, "options": options}
+    return static_file('success.html', root='./')
+#     return {"success": True, "url": url, "options": options}
 
 @app.route("/youtube-dl/update", method="GET")
 def update():
